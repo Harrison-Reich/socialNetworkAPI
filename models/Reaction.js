@@ -17,5 +17,7 @@ const Reaction = new Schema(
       ref: 'thought',
       required: true
     }
-  }
+  }, { timestamps: true }
 )
+
+module.exports = model('reaction', Reaction)
