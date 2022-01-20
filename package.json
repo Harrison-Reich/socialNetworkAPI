@@ -1,0 +1,21 @@
+{
+  "name": "socialnetworkapi",
+  "version": "1.0.0",
+  "description": "![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Harrison-Reich/socialNetworkAPI?style=flat&logo=appveyor) ![Badge for GitHub commit activity](https://img.shields.io/github/commit-activity/w/Harrison-Reich/socialNetworkAPI?color=purple) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harrison-Reich/socialNetworkAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harrison-Reich/socialNetworkAPI/issues"
+  },
+  "homepage": "https://github.com/Harrison-Reich/socialNetworkAPI#readme"
+}
