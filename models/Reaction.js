@@ -7,5 +7,10 @@ const Reaction = new Schema(
       required: true,
       maxlength: 300
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'user'
+      required: true
+    },
   }
 )
