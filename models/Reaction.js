@@ -12,5 +12,10 @@ const Reaction = new Schema(
       ref: 'user'
       required: true
     },
+    thought: {
+      type: Schema.Types.ObjectId,
+      ref: 'thought',
+      required: true
+    }
   }
 )
