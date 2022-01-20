@@ -1,5 +1,8 @@
+// creating Reaction model
+
 const { Schema, model } = require('mongoose')
 
+// contains text body, user and Id, thought ad timestamp
 const Reaction = new Schema(
   {
     body: {
@@ -20,4 +23,5 @@ const Reaction = new Schema(
   }, { timestamps: true }
 )
 
+// exporting model
 module.exports = model('reaction', Reaction)
