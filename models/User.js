@@ -1,6 +1,9 @@
 // creating User model
 
-const { User } = new Schema (
+const { Schema, model } = require('mongoose')
+
+// contains username, email, thoughts, reactions, friends and timestamps
+const User  = new Schema (
   {
     username: {
       type: String,
@@ -35,10 +38,13 @@ const { User } = new Schema (
   }, { timestamps: true }
 )
 
+// function to get data about the friend count
 User.virtual('friendCount').get(function() {
   return this.friends.length
 })
 
+// passport local require
 User.plugin(require('passport-local-mongoose'))
 
+// exporting model
 module.exports = model('user', User)

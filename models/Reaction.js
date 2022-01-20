@@ -2,7 +2,7 @@
 
 const { Schema, model } = require('mongoose')
 
-// contains text body, user and Id, thought ad timestamp
+// contains text body, user and Id, thought ad timestamps
 const Reaction = new Schema(
   {
     body: {
