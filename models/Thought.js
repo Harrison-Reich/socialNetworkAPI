@@ -1,5 +1,8 @@
+// creating Thought model
+
 Const { Schema, model } = require('mongoose')
 
+// contains body, user and id, reactions and timestamps
 const Thought = new Schema(
   {
     body: {
@@ -20,4 +23,5 @@ const Thought = new Schema(
   }, { timestamps: true }
 )
 
+// exporting model
 module.exports = model('thought', Thought)
