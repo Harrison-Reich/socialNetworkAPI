@@ -23,5 +23,11 @@ router.put('/thoughts/:id', passport.authenticate('jwt'), async function (req, r
   res.json(thought)
 })
 
+// delete one thought
+router.delete('/thought/:id', passport.authenticate('jwt'), async function (req, res) {
+  await Thought.findByIdAndDelete(req.params.id)
+  res.sendStatus(200)
+})
+
 
 module.exports = router
