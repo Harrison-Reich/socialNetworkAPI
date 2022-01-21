@@ -50,4 +50,10 @@ router.get('/users', passport.authenticate('jwt'), async function (req, res) {
   res.json(users)
 })
 
+// get one user
+router.get('/user/:id', passport.authenticate('jwt'), async function (req, res) {
+  const user = await User.findById(req.params.id).populate('posts')
+  res.json(user)
+})
+
 module.exports = router
