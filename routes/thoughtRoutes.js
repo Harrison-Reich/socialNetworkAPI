@@ -17,4 +17,11 @@ router.post('/thoughts', passport.authenticate('jwt'), async function (req, res)
   res.json(thought)
 })
 
+// edit one thought
+router.put('/thoughts/:id', passport.authenticate('jwt'), async function (req, res) {
+  const thought = await Thought.findByIdAndUpdate(req.params.id, { $set: req.body })
+  res.json(thought)
+})
+
+
 module.exports = router
