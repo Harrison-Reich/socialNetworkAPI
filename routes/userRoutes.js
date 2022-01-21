@@ -56,4 +56,10 @@ router.get('/user/:id', passport.authenticate('jwt'), async function (req, res) 
   res.json(user)
 })
 
+// edit a user profile
+router.put('/users/:id', passport.authenticate('jwt'), async function (req, res) {
+  const user = await User.findByIdAndUpdate(req.params.id, req.body)
+  res.json(user)
+})
+
 module.exports = router
