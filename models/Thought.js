@@ -1,6 +1,6 @@
 // creating Thought model
 
-Const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 // contains body, user and id, reactions and timestamps
 const Thought = new Schema(
