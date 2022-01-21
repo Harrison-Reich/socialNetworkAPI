@@ -29,5 +29,11 @@ router.delete('/thought/:id', passport.authenticate('jwt'), async function (req,
   res.sendStatus(200)
 })
 
+// find one thought
+router.get('/thought/:id', passport.authenticate('jwt'), async function (req, res) {
+  const thought = await Thought.findById(req.params.id).populate('user').populate('reactions')
+  res.json(thought)
+})
+
 
 module.exports = router
