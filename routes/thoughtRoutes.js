@@ -35,5 +35,10 @@ router.get('/thought/:id', passport.authenticate('jwt'), async function (req, re
   res.json(thought)
 })
 
+// find all thoughts
+router.get('/thoughts', passport.authenticate('jwt'), async function (req, res) {
+  const thoughts = await Thought.find({}).populate('user').populate('reactions')
+  res.json(thoughts)
+})
 
 module.exports = router
