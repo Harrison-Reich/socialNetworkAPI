@@ -21,3 +21,11 @@ router.put('/reactions/:id', passport.authenticate('jwt'), async function (req, 
   const reaction = await Reaction.findByIdAndUpdate(req.params.id, { $set: req.body })
   res.json(reaction)
 })
+
+// delete one reaction
+router.delete('/reactions/:id', passport.authenticate('jwt'), (req, res) => {
+  Reaction.findByIdAndDelete(req.params.id)
+    .then(reply =>
+      res.json(reply)
+    )
+})
