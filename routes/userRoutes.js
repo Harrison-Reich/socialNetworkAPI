@@ -41,4 +41,7 @@ router.post('/users/login', (req, res) => {
   })
 })
 
+// get a user profile
+router.get('/users/profile', passport.authenticate('jwt'), (req, res) => res.json(req.user))
+
 module.exports = router
