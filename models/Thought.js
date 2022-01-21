@@ -7,7 +7,7 @@ const Thought = new Schema(
   {
     body: {
       type: String,
-      required: 'Are you there? You need to leave a post before you can leave!'
+      required: 'Are you there? You need to leave a post before you can leave!',
       minlength: 1,
       maxlength: 300
     },
