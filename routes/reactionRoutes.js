@@ -29,3 +29,5 @@ router.delete('/reactions/:id', passport.authenticate('jwt'), (req, res) => {
       res.json(reply)
     )
 })
+
+module.exports = router
