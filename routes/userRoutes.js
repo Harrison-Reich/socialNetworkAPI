@@ -44,4 +44,10 @@ router.post('/users/login', (req, res) => {
 // get a user profile
 router.get('/users/profile', passport.authenticate('jwt'), (req, res) => res.json(req.user))
 
+// get all users
+router.get('/users', passport.authenticate('jwt'), async function (req, res) {
+  const users = await User.find({}).populate('posts')
+  res.json(users)
+})
+
 module.exports = router
