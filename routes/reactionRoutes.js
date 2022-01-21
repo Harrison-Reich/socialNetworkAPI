@@ -9,3 +9,9 @@ router.post('/reactions', passport.authenticate('jwt'), async function (req, res
   await User.findByIdAndUpdate(req.user._id, { $push: { reactions: reaction._id } })
   res.json(reaction)
 })
+
+// get all reactions
+router.get('/reactions', passport.authenticate('jwt'), async function (req, res) {
+  const reactions = await Reaction.find({}).populate('user')
+  res.json(reactions)
+})
