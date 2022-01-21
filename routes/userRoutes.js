@@ -18,4 +18,11 @@ router.delete('/users/:id', async function (req, res) {
   res.sendStatus(200)
 })
 
+// add a friend
+router.post('/user/:userId/friend/:friendId', passport.authenticate('jwt'), async function (req, res) {
+  const friend = await User.findByIdAndUpdate(req.params.userId, { $addToSet: { friends: req.params.friendId } })
+  const friend2 = await User.findByIdAndUpdate(req.params.friendId, { $addToSet: { friends: req.params.userId } })
+  res.sendStatus(200)
+})
+
 module.exports = router
