@@ -32,4 +32,13 @@ router.delete('/user/:userId/friend/:friendId', passport.authenticate('jwt'), as
   res.sendStatus(200)
 })
 
+// login as a user
+router.post('/users/login', (req, res) => {
+  const { username } = req.body
+  User.authenticate()(username, req.body.password, (err, user) => {
+    if (err) { console.log(err) }
+    res.json(user ? jwt.sign({ id: user._id }, process.env.SECRET) : null)
+  })
+})
+
 module.exports = router
