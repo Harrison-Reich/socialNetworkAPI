@@ -15,3 +15,9 @@ router.get('/reactions', passport.authenticate('jwt'), async function (req, res)
   const reactions = await Reaction.find({}).populate('user')
   res.json(reactions)
 })
+
+// edit one reaction
+router.put('/reactions/:id', passport.authenticate('jwt'), async function (req, res) {
+  const reaction = await Reaction.findByIdAndUpdate(req.params.id, { $set: req.body })
+  res.json(reaction)
+})
