@@ -3,8 +3,7 @@
 const { Schema, model } = require('mongoose')
 
 // contains text body, user and Id, thought ad timestamps
-const Reaction = new Schema(
-  {
+const Reaction = new Schema({
     body: {
       type: String,
       required: true,
@@ -20,8 +19,7 @@ const Reaction = new Schema(
       ref: 'thought',
       required: true
     }
-  }, { timestamps: true }
-)
+  }, { timestamps: true })
 
 // exporting model
 module.exports = model('reaction', Reaction)
