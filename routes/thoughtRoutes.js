@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const { Thought, User } = require('../models')
-const { sendStatus } = require('express/lib/response')
 
 // create a thought
 router.post('/thoughts', async function (req, res) {
@@ -17,7 +16,7 @@ router.delete('/thought/:id', async function (req, res) {
 
 // get one thought
 router.get('/thought/:id', async function (req, res) {
-  const thought = await Thought.findById(req.params.id).populate('user').populate('reactions')
+  const thought = await Thought.findById(req.params.id).populate('user reactions')
   res.json(thought)
 })
 
