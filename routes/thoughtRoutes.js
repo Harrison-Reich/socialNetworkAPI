@@ -21,13 +21,13 @@ router.delete('/thought/:id', async function (req, res) {
   res.sendStatus(200)
 })
 
-// find one thought
+// get one thought
 router.get('/thought/:id', async function (req, res) {
   const thought = await Thought.findById(req.params.id).populate('user').populate('reactions')
   res.json(thought)
 })
 
-// find all thoughts
+// get all thoughts
 router.get('/thoughts', async function (req, res) {
   const thoughts = await Thought.find({}).populate('user').populate('reactions')
   res.json(thoughts)
