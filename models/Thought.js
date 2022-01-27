@@ -23,5 +23,10 @@ const Thought = new Schema(
   }, { timestamps: true }
 )
 
+Thought.virtual('reactionCount').get(function () {
+  return this.reactions.length
+})
+
+
 // exporting model
 module.exports = model('thought', Thought)
