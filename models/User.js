@@ -1,5 +1,4 @@
 // creating User model
-
 const { Schema, model } = require('mongoose')
 
 // contains username, email, thoughts, reactions, friends and timestamps
