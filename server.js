@@ -8,9 +8,6 @@ app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(passport.initialize())
-app.use(passport.session())
-
 app.use(require('./routes'))
 
 require('./db')
