@@ -1,5 +1,4 @@
 // creating Reaction model
-
 const { Schema, model } = require('mongoose')
 
 // contains text body, user and Id, thought ad timestamps
