@@ -9,13 +9,6 @@ router.post('/thoughts', async function (req, res) {
   res.json(thought)
 })
 
-// create a thought
-router.post('/thoughts', async function (req, res) {
-  const thought = await Thought.create({ ...req.body, user: req.user._id })
-  await User.findByIdAndUpdate(req.user._id, { $push: { thoughts: thought._id } })
-  res.json(thought)
-})
-
 // edit one thought
 router.put('/thoughts/:id', async function (req, res) {
   const thought = await Thought.findByIdAndUpdate(req.params.id, { $set: req.body })
