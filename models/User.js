@@ -14,7 +14,12 @@ const User  = new Schema (
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must match an email address!'],
+      validate: {
+        validator: function (v) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
+        },
+        message: 'Please enter a valid email'
+      },
     },
     thoughts: [{
       type: Schema.Types.ObjectId,
@@ -41,9 +46,6 @@ const User  = new Schema (
 User.virtual('friendCount').get(function() {
   return this.friends.length
 })
-
-// passport local require
-User.plugin(require('passport-local-mongoose'))
 
 // exporting model
 module.exports = model('user', User)
