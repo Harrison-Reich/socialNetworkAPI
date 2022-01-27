@@ -23,6 +23,7 @@ const Thought = new Schema(
   }, { timestamps: true }
 )
 
+// reaction count function
 Thought.virtual('reactionCount').get(function () {
   return this.reactions.length
 })
