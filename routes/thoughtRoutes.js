@@ -22,7 +22,7 @@ router.get('/thought/:id', async function (req, res) {
 
 // get all thoughts
 router.get('/thoughts', async function (req, res) {
-  const thoughts = await Thought.find({}).populate('user').populate('reactions')
+  const thoughts = await Thought.find({}).populate('user reactions')
   res.json(thoughts)
 })
 
