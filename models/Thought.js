@@ -1,10 +1,8 @@
 // creating Thought model
-
 const { Schema, model } = require('mongoose')
 
 // contains body, user and id, reactions and timestamps
-const Thought = new Schema(
-  {
+const Thought = new Schema({
     body: {
       type: String,
       required: true,
@@ -20,8 +18,7 @@ const Thought = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'reaction'
     }]
-  }, { timestamps: true }
-)
+  }, { timestamps: true })
 
 // reaction count function
 Thought.virtual('reactionCount').get(function () {
