@@ -9,7 +9,7 @@ router.post('/thoughts', async function (req, res) {
   res.json(thought)
 })
 
-// post one thought
+// edit one thought
 router.put('/thoughts/:id', async function (req, res) {
   await Thought.findByIdAndUpdate(req.params.id, req.body)
   res.sendStatus(200)

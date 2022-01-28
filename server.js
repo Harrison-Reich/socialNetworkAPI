@@ -11,5 +11,9 @@ app.use(express.json())
 app.use(require('./routes'))
 
 require('./db')
-  .then(() => app.listen(3000))
+  .then(console.log(`---Connecting to Database---
+    --Seeding Table Data--
+    --Table Data Seeded--
+  `))
+  .then(() => app.listen(3000, () => { console.log(`App Listening on Port 300`)}))
   .catch(err => console.log(err))
