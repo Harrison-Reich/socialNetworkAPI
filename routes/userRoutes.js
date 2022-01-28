@@ -2,13 +2,10 @@ const router = require('express').Router()
 const { User, Thought } = require('../models')
 
 // make a new user
-router.post('/users/register', (req, res) => {
-  const { username, email } = req.body
-  User.register(new User({ username, email }), req.body.password, err => {
-    if (err) { console.log(err) }
-    res.sendStatus(200)
+router.post('/users/register', async function (req, res) {
+  const user = await User.create(req.body)
+  res.json(user)
   })
-})
 
 // delete a user
 router.delete('/users/:id', async function (req, res) {
@@ -35,13 +32,13 @@ router.get('/users/profile', (req, res) => res.json(req.user))
 
 // get all users
 router.get('/users', async function (req, res) {
-  const users = await User.find({}).populate('posts')
+  const users = await User.find({}).populate('thoughts')
   res.json(users)
 })
 
 // get one user
 router.get('/user/:id', async function (req, res) {
-  const user = await User.findById(req.params.id).populate('posts')
+  const user = await User.findById(req.params.id).populate('thoughts')
   res.json(user)
 })
 

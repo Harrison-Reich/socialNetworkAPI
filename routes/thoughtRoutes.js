@@ -4,7 +4,8 @@ const { Thought, User } = require('../models')
 // create a thought
 router.post('/thoughts', async function (req, res) {
   const thought = await Thought.create(req.body)
-  await User.findByIdAndUpdate(req.body.user)
+  await User.findByIdAndUpdate(req.body.user, {$push: { thoughts: thought._id } 
+  })
   res.json(thought)
 })
 

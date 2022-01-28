@@ -6,6 +6,8 @@ router.post('/reactions', async function (req, res) {
   const reaction = await Reaction.create(req.body)
   await Thought.findByIdAndUpdate(req.body.thought, { $push: { reactions: reaction._id }
   })
+  await User.findByIdAndUpdate(req.body.user, { $push: { reactions: reaction._id }
+  })
   res.json(reaction)
 })
 
