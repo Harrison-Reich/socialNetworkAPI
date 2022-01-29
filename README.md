@@ -34,8 +34,8 @@ If you have any questions, you may contact with the information below
   - GitHub: https://github.com/Harrison-Reich
   - Email: hreich1998@gmail.com
 
-## Video Tutorial
-<a href="https://www.w3schools.com">User Routes</a>
-<a href="https://www.w3schools.com">Thought Routes</a>
-<a href="https://www.w3schools.com">Reaction Routes</a>
-<a href="https://www.w3schools.com">Friend Routes</a>
+## Video Tutorials
+<a href="https://youtu.be/LBAtXMtRJew">User Routes</a>
+<a href="https://youtu.be/pVzfXHLhwNc">Thought Routes</a>
+<a href="https://youtu.be/wD_NvCsIS4I">Reaction Routes</a>
+<a href="https://youtu.be/ur9SxdJUjzE">Friend Routes</a>
