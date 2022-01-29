@@ -12,6 +12,7 @@
 - [License](#license)
 - [Questions](#questions)
 
+<img width="1437" alt="Postman routes" src="https://user-images.githubusercontent.com/93016157/151642431-10561e84-bc38-4b83-845c-1803d9c27a54.png">
 
 ## Description
   Here is an API for a social network web application where users can share a post(s), comment on a friends post(s) and create a friends list. It is required that you use Express.js for routing, along with a MongoDB database and the Mongoose ODM. 
@@ -34,3 +35,7 @@ If you have any questions, you may contact with the information below
   - Email: hreich1998@gmail.com
 
 ## Video Tutorial
+<a href="https://www.w3schools.com">User Routes</a>
+<a href="https://www.w3schools.com">Thought Routes</a>
+<a href="https://www.w3schools.com">Reaction Routes</a>
+<a href="https://www.w3schools.com">Friend Routes</a>
